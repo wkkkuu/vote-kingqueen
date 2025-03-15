@@ -70,6 +70,7 @@ async function vote(candidate) {
 
         if (!response.ok) throw new Error("Lỗi khi gửi vote");
 
+        localStorage.setItem("hasVoted", "true"); // Lưu vào LocalStorage
         alert(`Bạn đã vote cho ${candidate}. Cảm ơn!`);
         document.getElementById("message").innerText = "Bạn đã vote rồi!";
         document.getElementById("message").classList.remove("hidden");
